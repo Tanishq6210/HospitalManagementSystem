@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalmanagementsystem.Home">
+   <children>
+      <Label layoutX="26.0" layoutY="80.0" text="Home" textFill="#454dc4">
+         <font>
+            <Font name="Bookman Old Style Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="14.0" text="Welcome to Blo Hospital">
+         <font>
+            <Font name="Bookman Old Style Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_patients" layoutX="26.0" layoutY="158.0" mnemonicParsing="false" onAction="#displayPatients" text="Patients" />
+      <Button fx:id="btn_doctors" layoutX="117.0" layoutY="158.0" mnemonicParsing="false" onAction="#displayDoctors" text="Doctors" />
+      <Button fx:id="btn_appoint" layoutX="201.0" layoutY="158.0" mnemonicParsing="false" onAction="#displayAppointments" text="Appointments" />
+      <Button fx:id="btn_logout" layoutX="522.0" layoutY="348.0" mnemonicParsing="false" onAction="#onLogout" text="Log Out" />
+
+   </children>
+</AnchorPane>
