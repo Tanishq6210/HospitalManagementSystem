@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,7 +27,14 @@ public class Home {
 
     private Stage stage;
 
-    private Scene scene;
+    @FXML
+    private Label label_count_apt;
+
+    @FXML
+    private Label label_count_doctor;
+
+    @FXML
+    private Label label_count_patient;
 
     @FXML
     void displayAppointments(ActionEvent event) {

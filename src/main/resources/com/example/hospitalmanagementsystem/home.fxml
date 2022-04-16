@@ -17,10 +17,40 @@
             <Font name="Bookman Old Style Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="btn_patients" layoutX="26.0" layoutY="158.0" mnemonicParsing="false" onAction="#displayPatients" text="Patients" />
-      <Button fx:id="btn_doctors" layoutX="117.0" layoutY="158.0" mnemonicParsing="false" onAction="#displayDoctors" text="Doctors" />
-      <Button fx:id="btn_appoint" layoutX="201.0" layoutY="158.0" mnemonicParsing="false" onAction="#displayAppointments" text="Appointments" />
+      <Button fx:id="btn_patients" layoutX="26.0" layoutY="348.0" mnemonicParsing="false" onAction="#displayPatients" text="Patients" />
+      <Button fx:id="btn_doctors" layoutX="120.0" layoutY="348.0" mnemonicParsing="false" onAction="#displayDoctors" text="Doctors" />
+      <Button fx:id="btn_appoint" layoutX="219.0" layoutY="348.0" mnemonicParsing="false" onAction="#displayAppointments" text="Appointments" />
       <Button fx:id="btn_logout" layoutX="522.0" layoutY="348.0" mnemonicParsing="false" onAction="#onLogout" text="Log Out" />
+      <Label layoutX="26.0" layoutY="140.0" text="Current no. of Patients :" textFill="#454dc4">
+         <font>
+            <Font name="Bookman Old Style Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="226.0" text="Current no. of Appointments :" textFill="#454dc4">
+         <font>
+            <Font name="Bookman Old Style Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="185.0" text="Current no. of Doctors :" textFill="#454dc4">
+         <font>
+            <Font name="Bookman Old Style Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_count_patient" layoutX="355.0" layoutY="140.0" text="3" textFill="#454dc4">
+         <font>
+            <Font name="Bookman Old Style Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_count_doctor" layoutX="355.0" layoutY="185.0" text="3" textFill="#454dc4">
+         <font>
+            <Font name="Bookman Old Style Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_count_apt" layoutX="426.0" layoutY="226.0" text="3" textFill="#454dc4">
+         <font>
+            <Font name="Bookman Old Style Bold" size="24.0" />
+         </font>
+      </Label>
 
    </children>
 </AnchorPane>

@@ -12,16 +12,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AddDoctor {
+public class DeletePatient {
     private FXMLLoader root;
 
     private Stage stage;
 
     @FXML
-    private Button btn_add;
+    private Button btn_back;
 
     @FXML
-    private Button btn_back;
+    private Button btn_delete;
+
+    @FXML
+    private Button btn_update;
 
     @FXML
     private ToggleGroup gender;
@@ -45,7 +48,7 @@ public class AddDoctor {
     private TextField tf_phone;
 
     @FXML
-    void addPatient(ActionEvent event) {
+    void deletePatient(ActionEvent event) {
 
     }
 
@@ -58,5 +61,10 @@ public class AddDoctor {
         } catch (IOException e) {
             System.out.println(e);
         }
+    }
+
+    @FXML
+    void updatePatient(ActionEvent event) {
+
     }
 }

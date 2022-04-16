@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,6 +19,20 @@ public class Appointments {
 
     @FXML
     private Button btn_back;
+
+    @FXML
+    private TableView<?> table_appointment;
+
+    @FXML
+    void bookAppointment(ActionEvent event) {
+        root = new FXMLLoader(getClass().getResource("add_appointment.fxml"));
+        stage = (Stage) (btn_back.getScene().getWindow());
+        try {
+            stage.setScene(new Scene(root.load()));
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
 
     @FXML
     void onBack(ActionEvent event) {
