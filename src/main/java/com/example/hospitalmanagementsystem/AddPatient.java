@@ -1,5 +1,6 @@
 package com.example.hospitalmanagementsystem;
 
+import com.example.hospitalmanagementsystem.database.DB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -51,8 +52,27 @@ public class AddPatient {
     private TextField tf_phone;
 
     @FXML
-    void addPatient(ActionEvent event) {
+    private TextField tf_id;
 
+    @FXML
+    void addPatient(ActionEvent event) {
+        int id = Integer.parseInt(tf_id.getText());
+        String fname = tf_firstname.getText();
+        String lname = tf_lastname.getText();
+        String phone = tf_phone.getText();
+        String add = tf_address.getText();
+        String gender;
+        if(rb_female.isSelected()) gender = "FEMALE";
+        else gender = "MALE";
+
+        DB.insertPatient(id, fname, lname, gender, phone, add);
+        tf_id.setText("");
+        tf_firstname.setText("");
+        tf_lastname.setText("");
+        tf_phone.setText("");
+        tf_address.setText("");
+        rb_male.setSelected(false);
+        rb_female.setSelected(false);
     }
 
     @FXML

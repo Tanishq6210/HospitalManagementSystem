@@ -1,5 +1,6 @@
 package com.example.hospitalmanagementsystem;
 
+import com.example.hospitalmanagementsystem.database.DB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,6 +38,7 @@ public class HelloController {
 
     @FXML
     void onRegister(ActionEvent event) {
+        DB.register();
         root = new FXMLLoader(getClass().getResource("home.fxml"));
         stage = (Stage) (btn_login.getScene().getWindow());
         try {
