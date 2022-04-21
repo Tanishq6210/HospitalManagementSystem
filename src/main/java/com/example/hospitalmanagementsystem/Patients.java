@@ -11,20 +11,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.zip.InflaterInputStream;
 
 public class Patients implements Initializable {
     private FXMLLoader root;
 
     private Stage stage;
 
-    private Scene scene;
+    @FXML
+    private TextField tf_search;
+
     @FXML
     private TableColumn<Patient, String> col_add;
 
@@ -44,12 +48,6 @@ public class Patients implements Initializable {
     private TableColumn<Patient, String> col_phone;
     @FXML
     private Button btn_back;
-
-    @FXML
-    private Button btn_delete;
-
-    @FXML
-    private Button btn_update;
 
     @FXML
     private TableView<Patient> table_patient;
@@ -98,5 +96,19 @@ public class Patients implements Initializable {
 
         ObservableList items = DB.getPatients();
         table_patient.setItems(items);
+    }
+
+    public void searchedText(KeyEvent keyEvent) {
+        System.out.println(tf_search.getText());
+        table_patient.getItems().clear();
+
+        if(tf_search.getText().equals("")) {
+            ObservableList items = DB.getPatients();
+            table_patient.setItems(items);
+        } else {
+            ObservableList items = DB.searchInPatient(tf_search.getText());
+            table_patient.setItems(items);
+        }
+
     }
 }

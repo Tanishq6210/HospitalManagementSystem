@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,14 +15,17 @@
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btn_back" layoutX="534.0" layoutY="354.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
-      <TableView fx:id="table_appointment" layoutX="15.0" layoutY="86.0" prefHeight="246.0" prefWidth="572.0">
+      <Button fx:id="btn_back" layoutX="465.0" layoutY="354.0" mnemonicParsing="false" onAction="#onBack" prefHeight="26.0" prefWidth="110.0" text="BACK" />
+      <TableView fx:id="table_appointment" layoutX="20.0" layoutY="86.0" prefHeight="246.0" prefWidth="560.0">
         <columns>
-          <TableColumn prefWidth="136.0" text="Doctor Name" />
-          <TableColumn prefWidth="220.0" text="Patient Name" />
-            <TableColumn minWidth="0.0" prefWidth="216.00006103515625" text="Appointment Date" />
+          <TableColumn fx:id="col_pat_id" prefWidth="72.0" text="Patient ID" />
+          <TableColumn fx:id="col_pat_name" prefWidth="111.20001220703125" text="Patient Name" />
+            <TableColumn fx:id="col_doc_id" minWidth="0.0" prefWidth="89.5999755859375" text="Doctor ID" />
+            <TableColumn fx:id="col_doc_name" prefWidth="172.7999267578125" text="Doctor Name" />
+            <TableColumn fx:id="col_date" prefWidth="113.60009765625" text="Date" />
         </columns>
       </TableView>
-      <Button layoutX="33.0" layoutY="354.0" mnemonicParsing="false" onAction="#bookAppointment" text="BOOK APPOINTMENT" />
+      <Button layoutX="20.0" layoutY="353.0" mnemonicParsing="false" onAction="#bookAppointment" prefHeight="26.0" prefWidth="162.0" text="BOOK APPOINTMENT" />
+      <TextField fx:id="tf_search_text" layoutX="179.0" layoutY="51.0" onKeyTyped="#searchAppointment" prefHeight="26.0" prefWidth="219.0" promptText="Enter patient name to be searched ...." />
    </children>
 </AnchorPane>

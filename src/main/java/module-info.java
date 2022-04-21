@@ -1,3 +1,6 @@
+/**
+ *
+ */
 module com.example.hospitalmanagementsystem {
     requires javafx.controls;
     requires javafx.fxml;

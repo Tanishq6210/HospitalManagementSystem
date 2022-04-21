@@ -5,12 +5,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+//import java.swing.*;
+//import java.awt.*;
 
 public class HelloController {
     @FXML
@@ -33,12 +36,30 @@ public class HelloController {
 
     @FXML
     void onLogin(ActionEvent event) {
+        String user = tf_username.getText();
+        String pwd = tf_pwd.getText();
 
+        if(user.isEmpty() || pwd.isEmpty()) {
+            showMessage("Required Fields are empty", Alert.AlertType.ERROR);
+        } else {
+            if(DB.isUser(user, pwd)) {
+                showMessage("User Logged in", Alert.AlertType.NONE);
+                root = new FXMLLoader(getClass().getResource("home.fxml"));
+                stage = (Stage) (btn_login.getScene().getWindow());
+                try {
+                    stage.setScene(new Scene(root.load()));
+                } catch (IOException e) {
+                    System.out.println(e);
+                }
+            } else {
+                showMessage("Invalid Credentials", Alert.AlertType.NONE);
+            }
+        }
     }
 
     @FXML
     void onRegister(ActionEvent event) {
-        DB.register();
+        DB.register(tf_username.getText(), tf_pwd.getText());
         root = new FXMLLoader(getClass().getResource("home.fxml"));
         stage = (Stage) (btn_login.getScene().getWindow());
         try {
@@ -51,5 +72,11 @@ public class HelloController {
     @FXML
     void onExit(ActionEvent event) {
         System.exit(0);
+    }
+
+    private void showMessage(String content, Alert.AlertType type) {
+        Alert alert = new Alert(type, content, ButtonType.OK);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.show();
     }
 }

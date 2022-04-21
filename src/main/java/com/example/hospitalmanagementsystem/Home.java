@@ -1,16 +1,20 @@
 package com.example.hospitalmanagementsystem;
 
+import com.example.hospitalmanagementsystem.database.DB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Home {
+public class Home implements Initializable {
     @FXML
     private Button btn_appoint;
 
@@ -80,4 +84,10 @@ public class Home {
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        label_count_patient.setText(String.valueOf(DB.getCountPatient()));
+        label_count_doctor.setText(String.valueOf(DB.getCountDoctor()));
+        label_count_apt.setText(String.valueOf(DB.getCountAppointment()));
+    }
 }

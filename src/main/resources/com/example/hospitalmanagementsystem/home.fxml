@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalmanagementsystem.Home">
    <children>
-      <Label layoutX="26.0" layoutY="80.0" text="Home" textFill="#454dc4">
+      <Label layoutX="237.0" layoutY="68.0" text="Home" textFill="#454dc4">
          <font>
             <Font name="Bookman Old Style Bold" size="36.0" />
          </font>
@@ -17,36 +17,36 @@
             <Font name="Bookman Old Style Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="btn_patients" layoutX="26.0" layoutY="348.0" mnemonicParsing="false" onAction="#displayPatients" text="Patients" />
-      <Button fx:id="btn_doctors" layoutX="120.0" layoutY="348.0" mnemonicParsing="false" onAction="#displayDoctors" text="Doctors" />
-      <Button fx:id="btn_appoint" layoutX="219.0" layoutY="348.0" mnemonicParsing="false" onAction="#displayAppointments" text="Appointments" />
-      <Button fx:id="btn_logout" layoutX="522.0" layoutY="348.0" mnemonicParsing="false" onAction="#onLogout" text="Log Out" />
-      <Label layoutX="26.0" layoutY="140.0" text="Current no. of Patients :" textFill="#454dc4">
+      <Button fx:id="btn_patients" alignment="CENTER" layoutX="10.0" layoutY="139.0" mnemonicParsing="false" onAction="#displayPatients" prefHeight="30.0" prefWidth="98.0" text="Patients" />
+      <Button fx:id="btn_doctors" alignment="CENTER" layoutX="10.0" layoutY="199.0" mnemonicParsing="false" onAction="#displayDoctors" prefHeight="30.0" prefWidth="98.0" text="Doctors" />
+      <Button fx:id="btn_appoint" alignment="CENTER" layoutX="11.0" layoutY="261.0" mnemonicParsing="false" onAction="#displayAppointments" text="Appointments" />
+      <Button fx:id="btn_logout" layoutX="242.0" layoutY="333.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="30.0" prefWidth="98.0" text="Log Out" />
+      <Label layoutX="139.0" layoutY="140.0" text="Current no. of Patients :" textFill="#454dc4">
          <font>
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="29.0" layoutY="226.0" text="Current no. of Appointments :" textFill="#454dc4">
+      <Label layoutX="136.0" layoutY="262.0" text="Current no. of Appointments :" textFill="#454dc4">
          <font>
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="185.0" text="Current no. of Doctors :" textFill="#454dc4">
+      <Label layoutX="136.0" layoutY="199.0" text="Current no. of Doctors :" textFill="#454dc4">
          <font>
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="label_count_patient" layoutX="355.0" layoutY="140.0" text="3" textFill="#454dc4">
+      <Label fx:id="label_count_patient" layoutX="540.0" layoutY="140.0" text="3" textFill="#454dc4">
          <font>
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="label_count_doctor" layoutX="355.0" layoutY="185.0" text="3" textFill="#454dc4">
+      <Label fx:id="label_count_doctor" layoutX="540.0" layoutY="199.0" text="3" textFill="#454dc4">
          <font>
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="label_count_apt" layoutX="426.0" layoutY="226.0" text="3" textFill="#454dc4">
+      <Label fx:id="label_count_apt" layoutX="540.0" layoutY="262.0" text="3" textFill="#454dc4">
          <font>
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>

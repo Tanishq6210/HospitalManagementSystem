@@ -26,7 +26,7 @@
             <TableColumn fx:id="col_add" prefWidth="175.99993896484375" text="Address" />
         </columns>
       </TableView>
-      <TextField layoutX="401.0" layoutY="44.0" promptText="Search here..." />
+      <TextField fx:id="tf_search" layoutX="195.0" layoutY="62.0" onKeyTyped="#searchedText" prefHeight="26.0" prefWidth="186.0" promptText="Enter name to be searched..." />
       <Button fx:id="btn_update" layoutX="164.0" layoutY="344.0" mnemonicParsing="false" onAction="#onUpdate" text="Update Patient" />
       <Button fx:id="btn_add" layoutX="50.0" layoutY="344.0" mnemonicParsing="false" onAction="#addPatient" text="Add Patient" />
    </children>

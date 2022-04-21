@@ -11,7 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -52,6 +54,9 @@ public class Doctors implements Initializable {
 
     @FXML
     private TableView<Doctor> table_doctor;
+
+    @FXML
+    private TextField tf_search;
 
     @FXML
     void addDoctor(ActionEvent event) {
@@ -96,5 +101,19 @@ public class Doctors implements Initializable {
 
         ObservableList items = DB.getDoctors();
         table_doctor.setItems(items);
+    }
+
+    public void onSearchedText(KeyEvent keyEvent) {
+        System.out.println(tf_search.getText());
+        table_doctor.getItems().clear();
+
+        if(tf_search.getText().equals("")) {
+            ObservableList items = DB.getDoctors();
+            table_doctor.setItems(items);
+        } else {
+            ObservableList items = DB.searchInDoctor(tf_search.getText());
+            table_doctor.setItems(items);
+        }
+
     }
 }
