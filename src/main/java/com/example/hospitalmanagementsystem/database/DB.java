@@ -333,7 +333,7 @@ public class DB {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital", "root", "");
             Statement s = con.createStatement();
-            ResultSet r = s.executeQuery("SELECT COUNT(*) AS recordCount FROM patient natural join (appointment natural join doctor)");
+            ResultSet r = s.executeQuery("SELECT COUNT(*) AS recordCount FROM appointment");
             r.next();
             count = r.getInt("recordCount");
             r.close();

@@ -5,10 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -59,14 +57,20 @@ public class AddDoctor {
         if(rb_female.isSelected()) gender = "FEMALE";
         else gender = "MALE";
 
-        DB.insertDoctor(id, fname, lname, gender, phone, add);
-        tf_id.setText("");
-        tf_firstname.setText("");
-        tf_lastname.setText("");
-        tf_phone.setText("");
-        tf_address.setText("");
-        rb_male.setSelected(false);
-        rb_female.setSelected(false);
+        if(fname.isEmpty() || lname.isEmpty() || phone.isEmpty() || add.isEmpty()) {
+            DB.showMessage("ALl fields are required!", Alert.AlertType.ERROR);
+        } else if(tf_phone.getText().length() == 10) {
+            DB.insertDoctor(id, fname, lname, gender, phone, add);
+            tf_id.setText("");
+            tf_firstname.setText("");
+            tf_lastname.setText("");
+            tf_phone.setText("");
+            tf_address.setText("");
+            rb_male.setSelected(false);
+            rb_female.setSelected(false);
+        } else {
+            DB.showMessage("Phone number should be of length 10", Alert.AlertType.ERROR);
+        }
     }
 
     @FXML

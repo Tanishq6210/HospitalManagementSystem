@@ -1,0 +1,4 @@
+.mainFxmlClass {
+    -fx-background-image: url('homepage.jpg');
+    -fx-background-size: cover;
+}

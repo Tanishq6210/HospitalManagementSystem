@@ -4,15 +4,23 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalmanagementsystem.HelloController">
+<?import java.net.URL?>
+<AnchorPane styleClass="mainFxmlClass" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalmanagementsystem.HelloController">
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
    <children>
-      <Label layoutX="20.0" layoutY="14.0" prefHeight="38.0" prefWidth="556.0" text="HOSPITAL MANAGEMENT SYSTEM">
+      <Label alignment="CENTER" layoutX="-1.0" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #00bfff;" text="HOSPITAL MANAGEMENT SYSTEM" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Bookman Old Style Bold" size="30.0" />
          </font>
+         <effect>
+            <ColorAdjust />
+         </effect>
       </Label>
       <Label layoutX="26.0" layoutY="131.0" text="Username : ">
          <font>

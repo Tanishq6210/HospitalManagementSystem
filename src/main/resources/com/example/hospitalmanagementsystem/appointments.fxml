@@ -8,9 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalmanagementsystem.Appointments">
-   <children>
-      <Label layoutX="201.0" layoutY="14.0" text="Appointments">
+<?import java.net.URL?>
+<AnchorPane styleClass="mainFxmlClass" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalmanagementsystem.Appointments">
+    <stylesheets>
+        <URL value="@style_home.css" />
+    </stylesheets>
+    <children>
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #00bfff;" text="Appointments" textFill="WHITE">
          <font>
             <Font name="Bookman Old Style Bold" size="24.0" />
          </font>

@@ -59,13 +59,17 @@ public class HelloController {
 
     @FXML
     void onRegister(ActionEvent event) {
-        DB.register(tf_username.getText(), tf_pwd.getText());
-        root = new FXMLLoader(getClass().getResource("home.fxml"));
-        stage = (Stage) (btn_login.getScene().getWindow());
-        try {
-            stage.setScene(new Scene(root.load()));
-        } catch (IOException e) {
-            System.out.println(e);
+        if(tf_pwd.getText().length() < 6) {
+            showMessage("Password should be of more than 6 characters!", Alert.AlertType.ERROR);
+        } else {
+            DB.register(tf_username.getText(), tf_pwd.getText());
+            root = new FXMLLoader(getClass().getResource("home.fxml"));
+            stage = (Stage) (btn_login.getScene().getWindow());
+            try {
+                stage.setScene(new Scene(root.load()));
+            } catch (IOException e) {
+                System.out.println(e);
+            }
         }
     }
 
