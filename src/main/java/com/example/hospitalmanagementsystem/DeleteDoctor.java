@@ -53,8 +53,7 @@ public class DeleteDoctor implements Initializable {
     @FXML
     private TextField tf_lastname;
 
-    @FXML
-    private TextField tf_phone;
+    @FXML    private TextField tf_phone;
 
     @FXML
     private ComboBox<Integer> cb_doctors;
