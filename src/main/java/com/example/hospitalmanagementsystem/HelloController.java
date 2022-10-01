@@ -12,8 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import java.io.IOException;
-//import java.swing.*;
-//import java.awt.*;
 
 public class HelloController {
     @FXML
